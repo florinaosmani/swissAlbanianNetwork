@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
-        <link rel="stylesheet", href=".\resources\css\index.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet", href="./resources/css/index.css" />
+        <link rel="stylesheet", href="./resources/css/reset.css" />
+
+        <script src="./resources/javascript/navToggle.js" async></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    
     </head>
     <body>
         <header>
-            <div>
+            <div id="headerFlexContainer">
                 <a href="index.html">
-                    <img src="./resources/media/logo.webp" alt="Logo Swiss Albanian Network"/>
+                    <img src="./resources/media/logo.webp" alt="Logo Swiss Albanian Network" 
+                    id="logo"/>
                 </a>
-            </div>
-            <nav>
-                <div>
-                    <!-- Die Icons wurden kopiert :) -->
-                     <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M104 333H896C929 333 958 304 958 271S929 208 896 
-                        208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 
-                        583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 
-                        583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 
-                        708H104C71 708 42 737 42 771S71 833 104 833Z" />
-                    </svg>
-                    <div>
-                        <ul>
-                            <li>
-                                <a>
-
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    
-                                </a>
-                            </li>
-                            <li>
-                                <a>
-                                    
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div id="navButtonContainer">
+                <!-- Die Icons wurden kopiert :) -->
+                    <!-- Very important!!! If adding new class, place after the navToggle Classes for both buttons!!!!-->
+                    <button id="navToggleOpen" class="navToggleOpen">
+                        <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" class="navToggleOpen">
+                            <path class="navToggleOpen" d="M104 333H896C929 333 958 304 958 271S929 208 896 
+                            208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 
+                            583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 
+                            583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 
+                            708H104C71 708 42 737 42 771S71 833 104 833Z" />
+                        </svg>
+                    </button>
+                    <button id="navToggleClose" class="navToggleClose">
+                        <svg class="navToggleClose" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                        <path class="navToggleClose" d="M742 167L500 408 258 167C246 154 233 150 217 150 196 
+                        150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 
+                        254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 
+                        829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 
+                        829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 
+                        258C863 229 863 200 833 171 804 137 775 137 742 167Z" />
+                        </svg>
+                    </button>
                 </div>
+            </div>
+            <nav id="dropdownMenu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Über den Verein
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Vorteile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Veranstaltungen
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Gönner*in werden
+                        </a>
+                    </li>
+                </ul>
             </nav>
         </header>
         <main>
+            <div id="movingBackground">
 
+            </div>
         </main>
         <footer>
 
