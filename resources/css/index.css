@@ -1,0 +1,28 @@
+html, body {
+    width: 100%;
+    font-size: 16px;
+}
+
+header {
+    width: 100%;
+}
+
+nav {
+    position: relative;
+}
+
+path {
+    width: 22px;
+    height: 22px;
+    fill: #33373d;
+    font-weight: 400;
+    font-size: 22px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+}
+
+li {
+    list-style: none;
+}
