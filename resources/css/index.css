@@ -55,9 +55,15 @@ header {
     border-radius: 10px;
     position: absolute;
     top: 120px;
-    display: none;
-    animation-name: dropdown;
-    animation-duration: 5s;
+    max-height: 0px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 300ms, max-height 300ms;
+}
+
+#dropdownMenu.open {
+    max-height: 100vh;
+    transform: scaleY(1);
 }
 
 #dropdownMenu ul {
@@ -76,16 +82,9 @@ header {
     padding: 25px 35px 25px 35px;
     display: block;
 }
-/* WORKING ON ANIMATION DOWN HERE FOR DROPDOWN MENU */
-@keyframes dropdown {
-    0% {
-        display: none;
-        transform: translateY(50px);
-    }
-    100% {
-        display: block;
-        transform: translateY(0);
-    }
+
+#dropdownMenu a.active {
+    color: rgb(209, 9, 15);
 }
 
 /* MAIN */

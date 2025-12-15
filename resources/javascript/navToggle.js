@@ -10,11 +10,11 @@ const handleToggleNav = () => {
     if (isOpen) {
         navToggleOpen.style.display = "none";
         navToggleClose.style.display = "block";
-        dropdownMenu.style.display = "block";
+        dropdownMenu.classList.add("open");
     } else {
         navToggleOpen.style.display = "block";
         navToggleClose.style.display = "none";
-        dropdownMenu.style.display = "none";
+        dropdownMenu.classList.remove("open");
     }
 }
 
