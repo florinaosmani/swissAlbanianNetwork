@@ -79,7 +79,7 @@ header {
     font-size: 15px;
     font-weight: 700;
     color: rgb(51, 55, 61);
-    padding: 25px 35px 25px 35px;
+    padding: 25px 35px;
     display: block;
 }
 
@@ -93,6 +93,7 @@ main {
     width: 100%;
 }
 
+/* BANNER */
 #banner {
     width: 100%;
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/06/dabed64ba8917425b33c1d3d984997c336daaec4.gif);
@@ -139,19 +140,135 @@ h1 {
     font-size: 15px;
 }
 
-#bannerText button {
-    width: 90.625%;
+#bannerText a {
+    width: 100%;
     background-color: transparent;
     border: 2px solid rgb(227, 227, 227);
     border-radius: 50px;
-    padding: 20px 45px 20px 45px;
+    padding: 20px 45px;
     line-height: 15px;
     margin: 0 auto;
-}
-
-#bannerText button a {
     color: rgb(227, 227, 227);
     font-size: 15px;
     text-decoration: none;
     font-weight: 500;
+    text-align: center;
+}
+
+/* Vergangene Events */
+#vergangeneEvents {
+    padding-top: 100px;
+    height: fit-content;
+    width: 100%;
+    overflow: hidden;
+}
+
+#vergangeneEvents h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+}
+
+#horizontalLinie {
+    height: 3px;
+    width: 60%;
+    background-color: rgb(227, 227, 227);
+    margin: 15px auto 60px auto;
+}
+
+#carousel {
+    position: relative;
+}
+
+#carousel ul {
+    --i: 1;
+    --touch: 0px;
+    width: 100%;
+    height: 500px;
+    padding: 0;
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+    transform: translateX(calc(var(--i) * (-100% - 5px) - var(--touch)));
+    transition: transform 0.5s ease;
+}
+
+#carousel ul li{
+    list-style: none;
+    height: 500px;
+    min-width: 100%;
+    width: 100%;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+#carousel li:first-child {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-02-at-16.04.34_ecff48fc.jpg);
+}
+
+#carousel li:nth-child(2){
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2024/11/AWD-12.12.24-%E2%80%93-Banner-2520-x-1680-px.jpg);
+}
+
+#carousel li:nth-child(3) {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/09/Swissalbaniannetwork_31.10.jpg);
+}
+
+#carousel li:nth-child(4) {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-12-at-13.33.19_7423a23c.jpg);
+}
+
+#carousel li:nth-child(5) {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/05/WhatsApp-Bild-2025-05-28-um-23.52.16_52527578.jpg);
+}
+
+#carousel li:nth-child(6){
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-02-at-16.04.34_ecff48fc.jpg);
+}
+
+#carousel li:last-child {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2024/11/AWD-12.12.24-%E2%80%93-Banner-2520-x-1680-px.jpg);
+}
+
+#carouselButtons {
+    height: 500px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* changed the design here slightly because the button on the website is only visible when you scroll to the side */
+#carouselButtons button {
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    border: none;
+    z-index: 3;
+    padding: 0 10px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+#carouselButtons button:hover {
+    opacity: 1;
+}
+
+.rotButton{
+    width: fit-content;
+    border: 1px solid rgb(209, 9, 15);
+    border-radius: 30px;
+    padding: 12px 24px;
+    margin: 30px auto 0 auto;
+    color: rgb(209, 9, 15);
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    display: block;
 }

@@ -7,6 +7,7 @@
 
         <script src="./resources/javascript/navToggle.js" async></script>
         <script src="./resources/javascript/navActive.js" async></script>
+        <script src="./resources/javascript/carousel.js" async></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,7 @@
         <link rel="icon" href="./resources/media/logo.webp">
     </head>
     <body>
+        <!-- TODO: make header visible again once you scroll up? or down i dont remember -->
         <header>
             <div id="headerFlexContainer">
                 <a href="index.html">
@@ -22,7 +24,7 @@
                     id="logo"/>
                 </a>
                 <div id="navButtonContainer">
-                <!-- Die Icons wurden kopiert :) -->
+                <!-- Paths were only copied here :) -->
                     <!-- Very important!!! If adding new class, place after the navToggle Classes for both buttons!!!!-->
                     <button id="navToggleOpen" class="navToggleOpen">
                         <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg" class="navToggleOpen">
@@ -86,11 +88,64 @@
                         <span>18/12/2025 |</span>
                         <span>Mini-Café Bar, Bleicherweg 62, 8002 Zürich</span>
                     </div>
-                    <button>
-                        <a href="#">Anmeldung</a>
-                    </button>
+                    <a href="#">Anmeldung</a>
                 </div>
             </div>
+            <section id="vergangeneEvents">
+                <h2>Vergangene Events</h2>
+                <div id="horizontalLinie"></div>
+                <div id="carousel">
+                    <ul id="carouselUl">
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                    </ul>
+                    <!-- !! If adding more classes to below DIV, make sure to add them second -->
+                    <div id="carouselButtons">
+                        <button id="leftButton" class="leftButton">
+                            <!-- Paths copied again -->
+                            <svg class="leftButton" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><rect class="leftButton" width="40" height="40" rx="20" fill="#F7F7F7"></rect><path class="leftButton" d="M22 25L17 20L22 15" stroke="#D1090F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </button>
+                        <button id="rightButton" class="rightButton">
+                            <svg class="rightButton" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><rect class="rightButton" x="40" y="40" width="40" height="40" rx="20" transform="rotate(-180 40 40)" fill="#F7F7F7"></rect><path class="rightButton" d="M18 15L23 20L18 25" stroke="#D1090F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <a class="rotButton" href="#">Alle anzeigen</a>
+            </section>
+            <section id="goennerWerden">
+
+            </section>
+            <section id="whatsappBeitreten">
+
+            </section>
+            <section id="socialMedia">
+
+            </section>
+            <section id="unserePartner">
+
+            </section>
+            <section id="kontakt">
+
+            </section>
         </main>
         <footer>
             
