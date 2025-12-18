@@ -3,8 +3,7 @@ const navLinks = document.getElementsByClassName("navlink");
 const handleSwitchActive = () => {
     /* takes the url and splits it so you only get the part which is different for every navLink */
     const urlSplit = window.location.href.split("/");
-    const linkText = urlSplit[urlSplit.length -1].split(".")[0]; 
-
+    const linkText = urlSplit[urlSplit.length -1].split(".")[0];
     /* splits each navLink's href so it can match the previous split url; if it matches it adds
     active to the classList, if it doesn't it removes it */
     /* TODO: Check whether this applies whenever the site is hosted, might need to make changes on how to split the URL */
@@ -14,6 +13,8 @@ const handleSwitchActive = () => {
             
             if (navText == linkText) {
                 navLinks[i].classList.add("active");
+            } else if (linkText == "") {
+
             } else {
                 navLinks[i].classList.remove("active");
             }

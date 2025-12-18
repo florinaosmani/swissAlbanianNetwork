@@ -8,7 +8,7 @@ let currentImg = 1;
 const showRightImg = () => {
     //TODO: figure out how to keep the animation all the way right even if someone clicks through them quickly
     if (currentImg == 7) {
-        /* Just in case someone clicks through quickly it doesn't work else */
+        /* Just in case someone clicks through quickly i have to manually reset it, it doesn't work else */
         currentImg = 0;
     }
     if (currentImg == -1)  {
@@ -16,15 +16,17 @@ const showRightImg = () => {
         currentImg = 5;
     }
 
-    if (carouselUl.style.transition == "none") {
+    if (carouselUl.style.transition == "none") { //in case handleEndTransition changed it to none beforehand
         carouselUl.style.transition = "transform 0.5s ease";
     }
     
-    carouselUl.style.setProperty("--i", i = currentImg);
+    carouselUl.style.setProperty("--i", i = currentImg); //sets index, changes css to only show certain part of the container
 }
 
 const handleEndTransition = () => {
-    if (currentImg == 6) {
+    /* for infinite looping the first and last li elements are double (0 = 5; 1 = 6;)
+    after they transition nicely with showRightImg here they will be reset to their actual index without any transition*/
+    if (currentImg == 6) { 
         currentImg = 1;
     }
     if (currentImg == 0) {
@@ -36,6 +38,7 @@ const handleEndTransition = () => {
 }
 
 //Click events
+//moves index up and down
 const handleClick = (event) => {
     event.stopPropagation();
     if (event.target.classList[0] == "leftButton") {
@@ -63,6 +66,7 @@ const handleTouchStart = (event) => {
     touchstartX = event.changedTouches[0].screenX;
 }
 
+//for smooth touch scrolling
 const handleTouchMove = (event) => {
     touchmoveX = event.changedTouches[0].screenX;
     let touchchange = (touchstartX - touchmoveX) + "px";
@@ -79,6 +83,7 @@ const handleTouchEnd = (event) => {
         currentImg--;
     }
 
+    //reset touch variable to 0 and skip to new image
     carouselUl.style.setProperty("--touch", "0px");
     showRightImg();
 }

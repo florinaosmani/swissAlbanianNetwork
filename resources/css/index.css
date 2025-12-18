@@ -10,7 +10,11 @@ html, body {
 
 header {
     width: 100%;
-    position: relative;
+    position: fixed;
+    background-color: white;
+    z-index: 5;
+    transform: translateY(0);
+    will-change: transform;
 }
 
 #headerFlexContainer {
@@ -122,7 +126,7 @@ main {
 
 h1 {
     font-size: 25px;
-    line-height: 25px;
+    line-height: 1;
     font-weight: 700;
 }
 
@@ -132,7 +136,7 @@ h1 {
 
 #bannerText div span{
     font-size: 18px;
-    line-height: 27px;
+    line-height: 1.5;
     display: block;
 }
 
@@ -146,7 +150,7 @@ h1 {
     border: 2px solid rgb(227, 227, 227);
     border-radius: 50px;
     padding: 20px 45px;
-    line-height: 15px;
+    line-height: 1;
     margin: 0 auto;
     color: rgb(227, 227, 227);
     font-size: 15px;
@@ -166,7 +170,7 @@ h1 {
 #vergangeneEvents h2 {
     font-size: 32px;
     font-weight: 600;
-    line-height: 32px;
+    line-height: 1;
     text-align: center;
 }
 
@@ -258,17 +262,506 @@ h1 {
     opacity: 1;
 }
 
+#vergangeneEvents .rotButton {
+    margin: 30px auto 0 auto;
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 1;
+    padding: 12px 24px;
+}
+
 .rotButton{
     width: fit-content;
     border: 1px solid rgb(209, 9, 15);
-    border-radius: 30px;
-    padding: 12px 24px;
-    margin: 30px auto 0 auto;
     color: rgb(209, 9, 15);
-    font-size: 18px;
     text-decoration: none;
     font-weight: 500;
-    line-height: 18px;
     text-align: center;
     display: block;
+}
+
+/* Gönner werden */
+
+#goennerWerden {
+    padding: 50px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+#goennerWerden div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+#goennerWerden h2 {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+#goennerWerden p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 14.4px;
+}
+
+#goennerWerden .rotButton {
+    border-radius: 50px;
+    font-size: 16px;
+    line-height: 1;
+    padding: 15px 45px;
+}
+
+#goennerWerden img {
+    width: 100%;
+    max-width: 424px;
+    height: 453px;
+    border-radius: 50px;
+}
+
+/* Whatsapp beitreten */
+
+#whatsappBeitreten {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/06/Frame-20.png);
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+    background-position: 50%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    padding: 25px;
+}
+
+#whatsappBeitreten h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+#whatsappBeitreten p {
+    font-size: 20px;
+    line-height: 1.5;
+    padding: 10px 0;
+    margin-bottom: 14.4px;
+}
+
+#whatsappBeitreten a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 45px;
+    border: 1.5px solid white;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+#whatsappBeitreten svg {
+    width: 16px;
+    height: 16px;
+}
+
+#whatsappBeitreten path{
+    fill: white;
+}
+
+/* Soziale Medien */
+#socialMedia {
+    width: 100%;
+}
+
+#socialMediaBanner {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/06/Rectangle-19-1.png);
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+}
+
+#socialMediaBanner h2 {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+#socialMediaBanner p {
+    margin-bottom: 14.4px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#socialMediaBanner div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 25px;
+}
+
+#socialMediaBanner div img {
+    width: 80%;
+    animation: phoneMove 1s ease-in-out infinite alternate;
+}
+
+@keyframes phoneMove {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+#gemeinschaft {
+    width: 100%;
+    height: 450px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/06/Frame-20.png);
+    color: white;
+    gap: 5px;
+}
+
+#gemeinschaft h2 {
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+#gemeinschaft p {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 20px 0;
+    margin-bottom: 14.4px;
+}
+
+#gemeinschaft a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 15px 45px;
+    border: 1.5px solid white;
+    border-radius: 50px;
+}
+
+/* unsere Partner */
+
+#unserePartner {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+#unserePartner h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+#unserePartner h2:last-of-type {
+    margin-top: 100px;
+}
+
+.horizontal {
+    height: 3px;
+    width: 40%;
+    background-color: rgb(227, 227, 227);
+    margin: 15px auto;
+}
+
+.partners {
+    width: 100%;
+    padding: 25px;
+}
+
+.partners a {
+    width: 100%;
+    padding: 25px;
+    display: block;
+}
+
+.partners a img {
+    width: 200px;
+    margin: 0 auto;
+}
+
+/* kontakt */
+
+#kontakt {
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/06/Frame-201.png);
+    width: 100%;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+#kontakt h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    color: white;
+}
+
+#kontakt p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 14.4px;
+    text-align: center;
+    color: rgb(227, 227, 227);
+}
+
+#kontakt form label { /* screenreader only */
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+#kontakt input {
+    margin-bottom: 16px;
+    padding: 6px 16px;
+    border: 1px solid rgb(105, 114, 125);
+    background-color: rgb(227, 227, 227);
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    width: 100%;
+    min-height: 47px;
+}
+
+#kontakt textarea {
+    border: 1px solid rgb(105, 114, 125);
+    background-color: rgb(227, 227, 227);
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 6px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+#kontakt button {
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid white;
+    padding: 20px 45px;
+    border-radius: 50px;
+    color: white;
+    margin: 0 auto 16px auto;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+}
+
+/* footer */
+footer {
+    width: 100%;
+}
+
+#footerUp {
+    width: 100%;;
+    padding: 40px 25px;
+    background-color: rgb(11, 11, 11);
+    color: white;
+}
+
+.footerSection{
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#footerUp div:first-of-type img {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+#footerUp div:first-of-type p {
+    margin-bottom: 14.4px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+#footerUp div:nth-of-type(2) h5 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+#footerUp div:nth-of-type(2) ul {
+    padding: 0;
+}
+
+#footerUp div:nth-of-type(2) li {
+    list-style: none;
+}
+
+#footerUp div:nth-of-type(2) a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 17px;
+    line-height: 1.17;
+    padding: 9px 0;
+    display: block;
+}
+
+#footerUp div:last-of-type h5{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
+#iconContainer {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.icon {
+    background-color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+#footerUp div:last-of-type h5:last-of-type{
+    margin-bottom: 0;
+}
+
+#footerUp div:last-of-type span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+#footerUp div:last-of-type span:last-of-type {
+    margin: 0;
+}
+
+#footerUp div:last-of-type a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* footer the red part */
+
+#footerDown {
+    background-color: rgb(209, 9, 15);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#footerDown a {
+    color: white;
+    text-decoration: none;
+}
+
+#footerDown ul {
+    padding: 0;
+}
+
+#footerDown li {
+    list-style: none;
+    display: inline;
+}
+
+#footerDown li a {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#footerDown li:first-of-type::after,
+#footerDown li:nth-of-type(2)::after  {
+    content: "";
+    border-left: 1px solid rgb(227, 227, 227);
+    margin: 0 5px;
+}
+
+.footerCredit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footerCredit span {
+    font-size: 15px;
+    line-height: 1.5;
+    padding-left: 5px;
+}
+
+#footerDown svg {
+    width: 31px;
+    height: 31px;
+    margin-right: 7.750px;
+}
+
+/* Gönnerin werden button */
+
+#goennerButton {
+    writing-mode: sideways-lr;
+    padding: 24px 12px;
+    background-color:rgb(209, 9, 15);
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1;
+    border-radius: 3px;
+    position: fixed;
+    bottom: 10%;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 4;
+}
+
+#goennerButton.show {
+    opacity: 1;
 }

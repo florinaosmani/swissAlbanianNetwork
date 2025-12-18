@@ -4,6 +4,7 @@ const dropdownMenu = document.getElementById("dropdownMenu");
 
 let isOpen = false;
 
+//changes the nav icon for mobile and other smaller displays
 const handleToggleNav = () => {
     isOpen = !isOpen;
 
