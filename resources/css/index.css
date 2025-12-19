@@ -170,8 +170,16 @@ header {
     #dropdownMenu a.active {
         border-bottom: 2px solid rgb(209, 9, 15);
     }
+}
 
+@media only screen and (min-width: 1367px) {
+    #dropdownMenu ul {
+        justify-content: right;
+    }
 
+    #dropdownMenu a {
+        padding: 4px 20px;
+    }
 }
 
 /* MAIN */
@@ -462,6 +470,29 @@ h1 {
     #carousel ul li{
         width: calc(33.3% - 4px);
         min-width: calc(33.3% - 4px);
+    }
+}
+
+@media only screen and (min-width: 1150px) {
+    #carouselWrapper {
+        width: 100%;
+        position: relative;
+    }
+
+    #carousel {
+        width: 90%;
+        overflow: hidden;
+        margin: 0 auto;
+        position: static;
+    }
+
+    #carouselButtons {
+        width: 100%;
+        left: 0;
+    }
+
+    #carouselButtons button {
+        opacity: 0.8;
     }
 }
 
