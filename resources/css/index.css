@@ -10,7 +10,9 @@ html, body {
 
 header {
     width: 100%;
+    height: 126px;
     position: fixed;
+    top: 0;
     background-color: white;
     z-index: 5;
     transform: translateY(0);
@@ -19,6 +21,7 @@ header {
 
 #headerFlexContainer {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +30,11 @@ header {
 
 #logo {
     aspect-ratio: auto 255 / 177;
-    width: 125px;
+    width: 110px;
+}
+
+#navButtonContainer {
+    margin-right: 5px;
 }
 
 #navButtonContainer button {
@@ -91,6 +98,82 @@ header {
     color: rgb(209, 9, 15);
 }
 
+@media only screen and (min-width: 375px) {
+    header {
+        height: 137px;
+    }
+
+    #logo {
+        width: 125px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        height: 116px;
+    }
+
+    #logo {
+        width: 125px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    header {
+        height: 106px;
+        display: flex;
+    }
+
+    #navButtonContainer button{
+        display: none;
+    }
+
+    #headerFlexContainer {
+        width: 20%;
+    }
+
+    #dropdownMenu {
+        width: 80%;
+        position: static;
+        background-color: transparent;
+        border-radius: 0;
+        height: 100%;
+        max-height: 100%;
+        transform: scaleY(1);
+        top: 0;
+    }
+
+    #dropdownMenu ul {
+        height: 100%;
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #dropdownMenu a {
+        padding: 4px 5px;
+        margin: 0 20px;
+        font-weight: 600;
+        line-height: 20px;
+        color: black;
+    }
+
+    #dropdownMenu li:first-of-type a {
+        margin-left: 0px;
+    }
+
+    #dropdownMenu li:last-of-type a {
+        margin-right: 0px;
+    }
+
+    #dropdownMenu a.active {
+        border-bottom: 2px solid rgb(209, 9, 15);
+    }
+
+
+}
+
 /* MAIN */
 
 main {
@@ -107,20 +190,22 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 10px 15px;
+    margin-top: 126px;
 }
 
 #banner img {
-    width: 90.625%;
+    width: 100%;
     border-radius: 15px;
     aspect-ratio: 2560 / 1706;
 }
 
 #bannerText {
-    width: 90.625%;
-    height: 36.38%;
+    width: 100%;
     color: white;
     display: flex;
     flex-direction: column;   
+    gap: 20px;
     justify-content: space-between;
 }
 
@@ -132,16 +217,28 @@ h1 {
 
 #dateLocation {
     padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #bannerText div span{
     font-size: 18px;
     line-height: 1.5;
-    display: block;
+    margin: 0 8px;
 }
 
 #bannerText span{
     font-size: 15px;
+}
+
+#bannerText div span:first-of-type::after {
+    content: "";
+    border-left: 2px solid white;
+    font-size: 15px;
+    line-height: 1.5;
+    position: relative;
+    inset-inline-start: 8px;
+    inset-inline-end: -8px;
 }
 
 #bannerText a {
@@ -151,12 +248,58 @@ h1 {
     border-radius: 50px;
     padding: 20px 45px;
     line-height: 1;
-    margin: 0 auto;
     color: rgb(227, 227, 227);
     font-size: 15px;
     text-decoration: none;
     font-weight: 500;
     text-align: center;
+}
+
+@media only screen and (max-width: 375px) {
+    #banner {
+        margin-top: 137px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #banner {
+        flex-direction: row-reverse;
+        padding: 210px 15px;
+        justify-content: space-between;
+        margin-top: 116px;;
+    }
+
+    #banner img {
+        width: 35%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 32% 0;
+    }
+
+    #bannerText {
+        width: 42%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+        font-weight: 700;
+        text-wrap-style: auto !important; 
+    }
+
+    #bannerText a {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    /* banner has changed on original page so i'm not sure what this is supposed to look like
+    i changed it according to my taste */
+    #banner {
+        margin-top: 106px;
+        padding: 210px 50px;
+    }
+
 }
 
 /* Vergangene Events */
@@ -192,9 +335,9 @@ h1 {
     height: 500px;
     padding: 0;
     display: flex;
-    column-gap: 5px;
+    column-gap: 8px;
     align-items: center;
-    transform: translateX(calc(var(--i) * (-100% - 5px) - var(--touch)));
+    transform: translateX(calc(var(--i) * (-100% - 8px) - var(--touch)));
     transition: transform 0.5s ease;
 }
 
@@ -208,32 +351,52 @@ h1 {
     background-position: center;
 }
 
-#carousel li:first-child {
+#carousel li:first-child { /* double third child */
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-12-at-13.33.19_7423a23c.jpg);
+    display: none;
+}
+
+#carousel li:nth-child(2) { /* double fourth child */
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/05/WhatsApp-Bild-2025-05-28-um-23.52.16_52527578.jpg);
+    display: none;
+}
+
+#carousel li:nth-child(3) { /* double fifth image */
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-02-at-16.04.34_ecff48fc.jpg);
 }
 
-#carousel li:nth-child(2){
+#carousel li:nth-child(4){ /* first image */
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2024/11/AWD-12.12.24-%E2%80%93-Banner-2520-x-1680-px.jpg);
 }
 
-#carousel li:nth-child(3) {
+#carousel li:nth-child(5) { /* second image */
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/09/Swissalbaniannetwork_31.10.jpg);
 }
 
-#carousel li:nth-child(4) {
+#carousel li:nth-child(6) { /* third image */
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-12-at-13.33.19_7423a23c.jpg);
 }
 
-#carousel li:nth-child(5) {
+#carousel li:nth-child(7) { /* fourth image */
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/05/WhatsApp-Bild-2025-05-28-um-23.52.16_52527578.jpg);
 }
 
-#carousel li:nth-child(6){
+#carousel li:nth-child(8){ /* fifth image */
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-02-at-16.04.34_ecff48fc.jpg);
 }
 
-#carousel li:last-child {
+#carousel li:nth-child(9) { /* double first image */
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2024/11/AWD-12.12.24-%E2%80%93-Banner-2520-x-1680-px.jpg);
+}
+
+#carousel li:nth-child(10) { /* double second image */
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/09/Swissalbaniannetwork_31.10.jpg);
+    display: none;
+}
+
+#carousel li:last-child { /* double third child */
+    background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-12-at-13.33.19_7423a23c.jpg);
+    display: none;
 }
 
 #carouselButtons {
@@ -280,9 +443,32 @@ h1 {
     display: block;
 }
 
+@media only screen and (min-width: 768px) {
+    #carousel ul {
+        transform: translateX(calc(var(--i) * (-50% - 4px) - var(--touch)));
+    }
+
+    #carousel ul li{
+        width: calc(50% - 4px); /* half the width - half the gap */
+        min-width: calc(50% - 4px);
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #carousel ul {
+        transform: translateX(calc(var(--i) * (-33.3% - 4px) - var(--touch)));
+    }
+
+    #carousel ul li{
+        width: calc(33.3% - 4px);
+        min-width: calc(33.3% - 4px);
+    }
+}
+
 /* Gönner werden */
 
 #goennerWerden {
+    width: 100%;
     padding: 50px 25px;
     text-align: center;
     display: flex;
@@ -302,6 +488,7 @@ h1 {
     font-size: 35px;
     font-weight: 600;
     line-height: 1;
+    text-wrap-style: auto;
 }
 
 #goennerWerden p {
@@ -322,6 +509,38 @@ h1 {
     max-width: 424px;
     height: 453px;
     border-radius: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+    #goennerWerden {
+        height: 653px;
+        margin: 50px 0;
+        flex-direction: row;
+        padding: 50px 10px;
+    }
+
+    #goennerWerden div {
+        align-items: start;
+    }
+
+    #goennerWerden h2,
+    #goennerWerden p {
+        text-align: left;
+    }
+
+    #goennerWerden h2 {
+        font-size: 50px;
+    }
+
+    #goennerWerden .rotButton {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #goennerWerden h2 {
+        font-size: 48px;
+    }
 }
 
 /* Whatsapp beitreten */
@@ -346,6 +565,7 @@ h1 {
     font-size: 32px;
     font-weight: 600;
     line-height: 1;
+    text-wrap-style: auto;
 }
 
 #whatsappBeitreten p {
@@ -378,6 +598,12 @@ h1 {
     fill: white;
 }
 
+@media only screen and (min-width: 768px) {
+    #whatsappBeitreten a {
+        font-size: 18px;
+    }
+}
+
 /* Soziale Medien */
 #socialMedia {
     width: 100%;
@@ -386,6 +612,7 @@ h1 {
 #socialMediaBanner {
     background-image: url(https://swissalbaniannetwork.ch/wp-content/uploads/2025/06/Rectangle-19-1.png);
     background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     min-height: 100vh;
     padding: 50px;
@@ -418,7 +645,6 @@ h1 {
 }
 
 #socialMediaBanner div img {
-    width: 80%;
     animation: phoneMove 1s ease-in-out infinite alternate;
 }
 
@@ -469,6 +695,28 @@ h1 {
     border-radius: 50px;
 }
 
+@media only screen and (min-width: 768px){
+    #socialMediaBanner div {
+        flex-direction: row;
+    }
+
+    #socialMediaBanner div img {
+        width: 50%;
+    }
+
+    #socialMediaBanner h2 {
+        font-size: 65px;
+    }
+
+    #gemeinschaft a {
+        font-size: 18px;
+    }
+
+    #gemeinschaft p {
+        max-width: 70%;
+    }
+}
+
 /* unsere Partner */
 
 #unserePartner {
@@ -510,8 +758,31 @@ h1 {
 }
 
 .partners a img {
-    width: 200px;
+    width: 60%;
     margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .partners {
+        display: flex;
+        column-gap: 10px;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .partners a {
+        padding: 15px;
+        flex-basis: 1;
+    }
+
+    .partners a img {
+        width: 100%;
+    }
+
+    .partners:last-of-type {
+        width: 40%;
+        margin: 0 auto;
+    }
 }
 
 /* kontakt */
@@ -585,6 +856,17 @@ h1 {
     font-size: 15px;
     font-weight: 500;
     line-height: 1;
+}
+
+@media only screen and (min-width: 768px){
+    #kontakt {
+        padding: 100px 70px;
+    }
+
+    #kontakt form {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
 /* footer */
@@ -690,6 +972,19 @@ footer {
     line-height: 1.5;
 }
 
+@media only screen and (min-width: 1025px) {
+    #footerUp {
+        display: flex;
+        gap: 5px;
+        padding: 40px 0;
+    }
+
+    .footerSection {
+        padding: 10px;
+        width: 33.3%;
+    }
+}
+
 /* footer the red part */
 
 #footerDown {
@@ -697,6 +992,8 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #footerDown a {
@@ -711,6 +1008,7 @@ footer {
 #footerDown li {
     list-style: none;
     display: inline;
+    margin: 0 8px;
 }
 
 #footerDown li a {
@@ -722,12 +1020,15 @@ footer {
 #footerDown li:nth-of-type(2)::after  {
     content: "";
     border-left: 1px solid rgb(227, 227, 227);
-    margin: 0 5px;
+    font-size: 15px;
+    line-height: 1.5;
+    position: relative;
+    inset-inline-start: 8px;
+    inset-inline-end: 8px;
 }
 
 .footerCredit {
-    width: 100%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
@@ -741,7 +1042,25 @@ footer {
     width: 31px;
     height: 31px;
     margin-right: 7.750px;
+    margin-left: 8px;
 }
+
+.footerCredit:last-of-type {
+    margin-right: 8px;
+}
+
+@media only screen and (max-width: 850px) {
+    #footerDown ul {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #footerDown {
+        flex-direction: row;
+    }
+}
+
 
 /* Gönnerin werden button */
 

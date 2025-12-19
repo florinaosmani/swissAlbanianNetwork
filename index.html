@@ -5,11 +5,11 @@
         <link rel="stylesheet", href="./resources/css/index.css" />
         <link rel="stylesheet", href="./resources/css/reset.css" />
 
-        <script src="./resources/javascript/navToggle.js" async></script>
-        <script src="./resources/javascript/navActive.js" async></script>
-        <script src="./resources/javascript/carousel.js" async></script>
-        <script src="./resources/javascript/goennerButton.js" async></script>
-        <script src="./resources/javascript/headerScroll.js" async></script>
+        <script src="./resources/javascript/navToggle.js" defer></script>
+        <script src="./resources/javascript/navActive.js" defer></script>
+        <script src="./resources/javascript/carousel.js" defer></script>
+        <script src="./resources/javascript/goennerButton.js" defer></script>
+        <script src="./resources/javascript/headerScroll.js" defer></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,13 +80,14 @@
         </header>
         <main>
             <div id="banner">
+                <!-- Different CSS styling for img here than original to make sure it scales across different devices and you can always read the content-->
                 <img src="https://swissalbaniannetwork.ch/wp-content/uploads/2025/11/18.12-03-scaled.png"
                 alt = "Image describing event"/>
                 <div id="bannerText">
                     <span>Kommende Veranstaltung</span>
-                    <h1>Last After Work Drinks of the Year - Let's close 2025 together.</h1>
+                    <h1>Last After Work Drinks of the Year – Let’s close 2025 together.</h1>
                     <div id="dateLocation">
-                        <span>18/12/2025 |</span>
+                        <span>18/12/2025</span>
                         <span>Mini-Café Bar, Bleicherweg 62, 8002 Zürich</span>
                     </div>
                     <a href="#">Anmeldung</a>
@@ -97,6 +98,18 @@
                 <div id="horizontalLinie"></div>
                 <div id="carousel">
                     <ul id="carouselUl">
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
+                        <li class="carouselImg">
+                            <a href="#"></a>
+                        </li>
                         <li class="carouselImg">
                             <a href="#"></a>
                         </li>
@@ -138,6 +151,7 @@
                     <p>Werde Gönner*in und unterstütze SAN beim Aufbau des Netzwerkes für Albanerinnen und Albaner in der Schweiz.</p>
                     <a class="rotButton" href="#">Jetzt beantragen</a>
                 </div>
+                <!-- This image leans to the left inbetween mobile and tablet sizes, I kept it in the middle because I'm not sure it's on purpose -->
                 <img loading="lazy" alt="Vorteile, die sich auszahlen! Als Mitglied im Swiss Albanian Network sicherst du dir exklusive Rabatte bei diesen Top-Marken - und Zugang zu unserem starken Business-Netzwerk!" 
                     src="https://swissalbaniannetwork.ch/wp-content/uploads/2025/06/SwissAlbanianNetwork_benefits.jpg" />
             </section>
@@ -169,6 +183,7 @@
             <section id="unserePartner">
                 <h2>Unsere Partner</h2>
                 <div class="horizontal"></div>
+                <!-- Not sure what the image sizes were supposed to be? i kept them all the same size-->
                 <div class="partners">
                     <a href="">
                         <img loading="lazy" alt="Zurich Netgroup" src="https://swissalbaniannetwork.ch/wp-content/uploads/2025/07/new_logo_zurich_rgb_6163x1024-scaled.png"/>

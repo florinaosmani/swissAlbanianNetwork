@@ -22,8 +22,3 @@ function handleHeaderScroll () {
 }
 
 window.addEventListener("scroll", handleHeaderScroll);
-
-/* add margiin-top to banner that's the height of header */
-window.addEventListener("load", () => {
-    document.getElementById("banner").style.transform = `translateY(${headerHeight}px)`;
-})
